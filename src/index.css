@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 159 122 234;
+    --color-secondary: 236 201 250;
+    --color-accent: 255 182 193;
+    --color-success: 152 200 156;
+    --color-warning: 250 219 166;
+    --color-error: 255 166 166;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply antialiased text-gray-900 bg-gradient-to-br from-purple-50 via-white to-pink-50;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500;
+}
+
+.premium-card {
+  @apply bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300;
+}
+
+.premium-button {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+}
+
+.premium-input {
+  @apply w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-100 focus:border-purple-300 focus:ring focus:ring-purple-200 focus:ring-opacity-50 transition-all duration-300;
+}
+
+.premium-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-purple-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-200 rounded-full hover:bg-purple-300 transition-colors;
+}
